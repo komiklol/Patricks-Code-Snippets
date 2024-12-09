@@ -6,6 +6,8 @@ Hey I´m **Patrick** 👋
 
 I'm currently in the second year of my apprenticeship as an **IT Specialist for Application Development**. My most-used programming language is **PHP**, but I enjoy exploring a variety of topics within tech.
 
+In every Project Folder you can find a `README.md` with a short description of the Project.
+
 ---
 
 ### What I'm Interested In
