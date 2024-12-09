@@ -1,0 +1,28 @@
+#!/bin/bash
+# ArStLe = Armor-Stand-Leather
+
+original_directory=$(pwd)
+cd 
+cd "$FunctionPath"
+source .sunkenfoyer
+cd "$original_directory"
+
+cat << EOF
+
+You step closer to the brown armor closest on your left.
+Its made of leather that looks as if it suffered a lot while it was submerged in water.
+it smells moldy and almost rotten.
+Still the leather is cut and carved incredibly well and has patterns that look like mountains.
+
+
+EOF
+
+
+cat << EOF
+
+The leather is lightweight and the armor seems as if you could easily move it around the room
+
+
+EOF
+
+armorstandpositioning

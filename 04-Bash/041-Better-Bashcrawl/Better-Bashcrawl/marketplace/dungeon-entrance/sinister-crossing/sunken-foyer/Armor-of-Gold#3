@@ -1,0 +1,58 @@
+#!/bin/bash
+# ArStGo = Armor-Stand-Gold
+
+original_directory=$(pwd)
+cd 
+cd "$FunctionPath"
+source .sunkenfoyer
+cd "$original_directory"
+
+cat << EOF
+
+Slowly you move to the second armor on your right. 
+The mud on it does little to diguise the golden shimmer this Armor holds.
+The design looks like there are flames dancing on its shoulders and engulfing the helmet.
+
+
+EOF
+
+
+cat << EOF
+
+The golden armor is heavy but if you wish you could probably still move it around the room.
+
+EOF
+
+if [ "$ArmorOfGold" -eq 0 ]; then
+cat << EOF
+
+As you strain to move the gloden armor the helmet sudedenly falls off.
+You could easily just take it with you.
+Do you want to take it or put it back on the armorstand?
+
+
+EOF
+    read -p "Keep or Put-Back? [k/p] " -n 1 -r keepGoHelmKP
+    echo " "
+    echo
+    ArmorOfGold=1                               # ArmorOfGold = 1 means the PLayer interacted with the armor and made a decision
+    if [ "$keepGoHelmKP" = "k" ]; then
+        echo "You put on the helmet and feel its weight on your shoulders. You gain 2 armor points."
+        ArmorPoints=$((ArmorPoints+2))
+        INVENTORY+=("Gold-Helmet")
+        keepGoHelm=1
+    elif [ "$keepGoHelmKP" = "p" ]; then
+        echo "Gently you put the helmet back where it belongs, making sure it sits straight."
+        echo "A whisper comes from the Armor so quiet you almost miss it: "
+        echo "Thank you, kind Traveler."
+        keepGoHelm=0
+    else 
+        echo "Your indecisiveness makes you fumble and the helmet slips out of your hands and breaks."
+        echo "A painful scream echos around the room making your head spin."
+        keepGoHelm=1
+    fi
+fi
+
+
+
+

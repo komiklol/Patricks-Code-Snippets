@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# This function is used to set the health of a Monster
+
+function MOB-Health {           # MOB-Health
+    MAX=$1
+    MIN=$2
+    rand=$(( RANDOM%$MAX+$MIN ))  # MAX and MIN Reminder: Max= Max+Min
+    export MOBHP=$rand                # MOBHP
+}
+
+# MOBHP=$(Mob-Health 10 5)     # MOBHP 5-15

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# This function is used for the players death
+
+function DEATH {
+    cat << EOF
+    As you take your final breath the monsters of the Dungeon rejoice.
+    Your vision darkens as the Souls of those fallen before you weep in dismay.
+    Though your Path ends here there a new Adventurere awaits to enter the dungeon.
+    Guide them and learn from your mistakes. 
+    And once the curse is lifted and you too can be free of the dungeon may the gods welcome your soul.
+
+    The Dungeon has captured another soul.
+EOF
+    death=$(($death + 1))
+    slash=""
+    for i in {1..90}; do
+        sleep 1
+        slash+="/"
+        echo -ne "$slash\r"
+    done
+    echo "$slash"
+    exit
+}
+
+# DEATH

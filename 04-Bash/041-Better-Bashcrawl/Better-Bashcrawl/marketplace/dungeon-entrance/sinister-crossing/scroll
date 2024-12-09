@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cat << EOF
+
+As you walk down teh steps the dirt walls slowly turn to stone bricks and the stairs underneath you are made out of solid stone as well.
+At the bottom of the steps you find yourself in a dimly lit room and you cant quite figure out where this light is comming from.
+The room has three exits: The one across from you leads to more stairs further down into the dungeon
+The one to your right leads to a short hallway. When you look close you can see rusted iron bars at the end of it.
+The one to your left once again has a hallway conecting it to a room. There is a lightsource there.
+Before you can decide which way to go you hear a strange sound.
+From one of the directions a slimy dragging sound moves in your direction. You steel yourself for what is comming.
+
+EOF

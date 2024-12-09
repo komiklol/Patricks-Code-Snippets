@@ -1,0 +1,79 @@
+#!/bin/bash
+
+# This function is used to check the Sword
+
+# Wooden-Sword, 
+# ALLSWORDS in game
+
+function Vampire {
+    if [ "$Vampireism" -gt 0 ]; then
+        if [ "$HP" -lt "$MAXHP" ]; then
+            if [ "$SwordDMG" -le 9 ]; then
+                HP=$((HP + ($RANDOM % 2)))
+            else
+                HP=$((HP + (SwordDMG / 10)))
+            fi
+            Vampireism=$((Vampireism - 1))
+        fi
+    fi
+}
+
+function SwordHit {
+    SwordHits=$((SwordHits + 1))
+    export SwordDMG=$((SwordDMGOriginal - ((SwordDMGOriginal * MushroomDMGDegrease) / 100) - ((SwordDMGOriginal * PotionDMGDegrease) / 100)))
+    if [ "$MushroomDMGDegreaseHits" -gt 0 ]; then
+        MushroomDMGDegreaseHits=$((MushroomDMGDegreaseHits - 1))
+        if [ "$MushroomDMGDegreaseHits" -eq 0 ]; then
+            echo " "
+            echo "The effect of the green Mushroom has worn off."
+            MushroomDMGDegrease=0
+        fi
+    fi 
+    if [ "$PotionDMGDegreaseHits" -gt 0 ]; then
+        PotionDMGDegreaseHits=$((PotionDMGDegreaseHits - 1))
+        if [ "$PotionDMGDegreaseHits" -eq 0 ]; then
+            echo " "
+            echo "The effect of the Potion has worn off."
+            PotionDMGDegrease=0
+        fi
+    fi
+}
+
+function CheckSword {
+    SwordStrength=0
+    for i in "${INVENTORY[@]}"; do
+        case $i in 
+            "Wooden-Sword")
+                if [ "$SwordStrength" -lt 1 ]; then
+                    SwordStrength=1
+                fi
+                ;;
+            "Iron-Sword")
+                if [ "$SwordStrength" -lt 2 ]; then
+                    SwordStrength=2
+                fi
+                ;;
+            *)  
+                ;;
+        esac
+    done
+
+    case $SwordStrength in
+        1)
+            Sword=1
+            SwordDMGOriginal=4
+            SwordDMG=4
+            ;;
+        2)
+            Sword=1
+            SwordDMGOriginal=6
+            SwordDMG=6
+            ;;
+        *)
+            Sword=0
+            SwordDMG=0
+            ;;
+    esac
+}
+
+# CheckSword

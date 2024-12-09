@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if [ "$SFflooded" -eq 1 ]; then
+    cat << EOF
+
+You take the first few steps down when you stop dead in your tracks.
+The staircase is completely submerged in water and in the dim light you can see your shocked expression reflecting back at you in the water.
+It seems the water has filled the room ahead entirely.
+You have to turn back and find a different way.
+
+EOF
+
+elif [ "$SFflooded" -eq 0 ]; then
+    cat << EOF
+
+Once again you make your way down the stairs. 
+This time there is no water stopping you from walking down all the way though you tread carfully as to not slip.
+As you make it to the final step you look around to see a room covered in mud.
+On either side stand two dirtied suits of armor at the walls.
+Between them stand small tables, on top of which stand single vases. 
+The wall on the other side of the room holds the entrance to a new room. 
+But maybe there is something else here?
+
+EOF
+
+# mv .Armor-of-Leather#2 Armor-of-Leather#2
+# mv .Armor-of-Iron#1 Armor-of-Iron#1
+# mv .Armor-of-Gold#3 Armor-of-Gold#3
+# mv .Armor-of-Chainmail#4 Armor-of-Chainmail#4
+
+else 
+    echo "########"
+    echo "Error: SFflooded is not 0 or 1, but $SFflooded, Pls Report this to the Devs."
+    echo "########"
+fi

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cat << EOF
+
+As you get closer to the room you notice small strange looking mushrooms of purple color growning on the grass that have spread from the room.
+You enter and are met with an incredible sight.
+The room before you is huge. With high ceelings and grass covering the floor.
+Giant purple mushrooms are growing in groups of 3 all around the room.
+A sweet sent radiates around you as the fungi spray orange spores.
+You look around and Notice that beyond the mushrooms in front of you there is a door of some kind
+You scan your surroundings more and see that to your right the mushrooms have formed an archway.
+
+EOF

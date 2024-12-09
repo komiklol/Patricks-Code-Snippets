@@ -1,0 +1,79 @@
+#!/bin/bash
+
+## Dieses Script speichert die Wichtigsten Daten des Spielers in einer Datei ab.
+## Als Funktion soll auch die Möglichkeit bestehen, die Datei wieder zu laden.
+
+# ## Player Related ############################################################
+#     death=0
+#     MAXHP=15
+#     HP=15
+#     Armor=0
+#     Sword=0
+#     SwordDMGOriginal=0
+#     SwordDMG=0
+#     SwordHits=0
+#     INVENTORY=()
+#     Money=0
+# ## Map Related ###############################################################
+#     SlimeKilledFK=0
+#     oldman=1
+#     SFflooded=1
+#     OrangeMushrooms=0
+#     PurpleMushrooms=0
+#     PMEntered=0
+#     InstructionMushroomGame=0
+#     InstMGFiT=1
+#     InstMGAskAg=1
+#     keepGoHelm=0
+#     ArmorOfGold=0
+#     LockPick=()
+#     LockPickEnter=0   
+# ## Game Related ##############################################################
+#     GameStartedTime="${GameStartedYear}${GameStartedMonth}${GameStartedDay}${GameStartedHour}${GameStartedMinutes}"  # The Totall Time the Game started in Digital Form
+# ## Item Related ##############################################################
+#     MushroomDMGDegrease=0
+#     MushroomDMGDegreaseHits=0
+#     PotionDMGDegrease=0
+#     PotionDMGDegreaseHits=0
+#     Vampireism=0
+    
+date=$(date +"%Y%m%d%H%M")
+cat << EOF > /saves/save-"$date".sh 
+## Player Related ############################################################
+    death="$death"
+    MAXHP="$MAXHP"
+    HP="$HP"
+    Armor="$Armor"
+    Sword="$Sword"
+    SwordDMGOriginal="$SwordDMGOriginal"
+    SwordDMG="$SwordDMG"
+    SwordHits="$SwordHits"
+    INVENTORY=("${INVENTORY[@]}")
+    Money="$Money"
+## Map Related ###############################################################
+    SlimeKilledFK="$SlimeKilledFK"
+    oldman="$oldman"
+    SFflooded="$SFflooded"
+    OrangeMushrooms="$OrangeMushrooms"
+    PurpleMushrooms="$PurpleMushrooms"
+    PMEntered="$PMEntered"
+    InstructionMushroomGame="$InstructionMushroomGame"
+    InstMGFiT="$InstMGFiT"
+    InstMGAskAg="$InstMGAskAg"
+    keepGoHelm="$keepGoHelm"
+    ArmorOfGold="$ArmorOfGold"
+    LockPick="$LockPick"
+    LockPickEnter="$LockPickEnter"
+## Game Related #############################################################
+    GameStartedTime="$GameStartedTime"
+## Item Related #############################################################
+    MushroomDMGDegrease="$MushroomDMGDegrease"
+    MushroomDMGDegreaseHits="$MushroomDMGDegreaseHits"
+    PotionDMGDegrease="$PotionDMGDegrease"
+    PotionDMGDegreaseHits="$PotionDMGDegreaseHits" 
+    Vampireism="$Vampireis"
+EOF
+
+
+
+

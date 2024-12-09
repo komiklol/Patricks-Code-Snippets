@@ -1,0 +1,26 @@
+#!/bin/bash
+# ArStIr = Armor-Stand-Iron
+
+original_directory=$(pwd)
+cd 
+cd "$FunctionPath"
+source .sunkenfoyer
+cd "$original_directory"
+
+cat << EOF
+
+You walk up to the armor closest to you on the right.
+Wiping away the mud you notice it is made out of solid iron.
+Its defenetly old and a bit rust but the deatails on the helmet and chestplate look incredibly intricate.
+With raised bits that look like waves.
+
+
+EOF
+
+
+cat << EOF
+
+Despite its heavy look it seems as if you could easily move it around the room
+
+EOF
+

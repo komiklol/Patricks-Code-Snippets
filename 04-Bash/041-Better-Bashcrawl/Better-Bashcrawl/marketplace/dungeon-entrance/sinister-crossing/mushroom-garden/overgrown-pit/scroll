@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cat << EOF
+
+As you pass the beautifull archway you take a moment to admire it before taking in the room infront of you.
+The floor is completely covered with branches roots and leaves.
+You go to enter the room further when you feel a pit in your stomach and an overwhelming feeling to stop. 
+Looking closer at the floor you see that the leaves are covering a giant pit that is taking up the room completely. 
+There are vines crawlng down the plain stone walls and some are even hanging down from the celing.
+Right across from you ist a passageway that leads to what looks like a tunnel. 
+The layer of leaves and roots looks as if it could support your weight. 
+
+Once again looking closer at the pit you spot just through the leaves that there are spike like strucktures sticking out at the bottom of the pit.
+
+EOF

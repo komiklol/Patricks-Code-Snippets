@@ -1,0 +1,119 @@
+#!/bin/bash
+
+# This script shows the inventory of the player and how to use items from the inventory.
+
+function USABLEITEMS {
+    itemfound=0
+    ITEMSTOSHOWITEM=()
+    ITEMSTOSHOWNUMBER=()
+    # Sort usable Items and list them in array
+    for item in "${USABLEITEMS[@]}"; do
+        counter=0
+        for inv_item in "${INVENTORY[@]}"; do
+            if [ "$item" = "$inv_item" ]; then
+                ((counter++))
+                itemfound=1
+            fi
+        done
+        if [ "$counter" -gt 0 ]; then
+            ITEMSTOSHOWITEM+=("$item")
+            ITEMSTOSHOWNUMBER+=("$counter")
+        fi
+    done
+    # Output of the sorted arrays
+    if [ "$itemfound" -eq 1 ]; then
+        itemfound=0
+        end1=0
+        until [ "$end1" = 1 ]; do
+            potionfound=0
+            mushroomfound=0
+            echo "-----------------------------------"
+            echo "Your Usable Items:"
+            echo "-----------------------------------"
+            for ((i = 0; i < ${#ITEMSTOSHOWITEM[@]}; i++)); do
+                echo "Item: ${ITEMSTOSHOWITEM[$i]} - ${ITEMSTOSHOWNUMBER[$i]}"
+            done
+            echo "-----------------------------------"
+            read -p "0) Close. Which Item do you want to use?: " eingabe
+            if [ "$eingabe" != 0 ]; then
+                for item in "${USABLEITEMS[@]}"; do
+                    if [ "$item" = "$eingabe" ]; then
+                        for potion in "${POTIONS[@]}"; do
+                            if [ "$potion" = "$eingabe" ]; then
+                                potionfound=1
+                            fi
+                        done
+                        MUSHROOMS=(Purple-Mushroom Green-Mushroom Orange-Mushroom)
+                        for mushroom in "${MUSHROOMS[@]}"; do
+                            if [ "$mushroom" = "$eingabe" ]; then
+                                mushroomfound=1
+                            fi
+                        done
+                        # for item in "${itemarray[@]}"; do
+                        #   if [ "$item" = "$eingabe" ]; then
+                        #       itemfound=1                         # for later use
+                        #   fi
+                        # done
+                        itemfound=1
+                        break
+                    fi
+                done
+                if [ "$itemfound" -eq 0 ]; then
+                    echo "-----------------------------------"
+                    echo "You dont have this Item ($eingabe)."
+                    echo "-----------------------------------"
+                else 
+                    if [ "$potionfound" -eq 1 ]; then
+                        potionfunction $eingabe                         # source .potion
+                    fi 
+                    if [ "$mushroomfound" -eq 1 ]; then
+                        MushroomUse $eingabe                            # source .mushrooms
+                    fi
+                    # if [ "itemfound" -eq 1 ]; then
+                    #   itemfunction                            # source .item
+                    # fi
+                fi
+                end1=1
+            else 
+                end1=1
+            fi
+        done
+    else
+        echo "-----------------------------------"
+        echo "You dont have usable Items."
+        echo "-----------------------------------"
+    fi
+    echo " "
+}
+
+function ShowInventory {
+    ITEMSTOSHOWITEM=()
+    ITEMSTOSHOWNUMBER=()
+    # Sort Items and List them in Array
+    for item in "${ALLITEMSARRAY[@]}"; do
+        counter=0
+        for inv_item in "${INVENTORY[@]}"; do
+            if [ "$item" = "$inv_item" ]; then
+                ((counter++))
+            fi
+        done
+        if [ "$counter" -gt 0 ]; then
+            ITEMSTOSHOWITEM+=("$item")
+            ITEMSTOSHOWNUMBER+=("$counter")
+        fi
+    done
+    # Output of the Sortet Arrays
+    echo "-----------------------------------"
+    echo "Your Inventory:"
+    echo "-----------------------------------"
+    for ((i = 0; i < ${#ITEMSTOSHOWITEM[@]}; i++)); do
+        echo "Item: ${ITEMSTOSHOWITEM[$i]} - ${ITEMSTOSHOWNUMBER[$i]}"
+    done
+    echo "-----------------------------------"
+    read -p "1) Use Items, 0) Close."$'\n' -n 1 -s eingabe
+    if [ "$eingabe" -eq 1 ]; then
+        USABLEITEMS
+    fi
+}
+
+# ShowInventory   # aufrufen der funktion

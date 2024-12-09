@@ -1,0 +1,89 @@
+#!/bin/bash
+
+
+function lockPinGen {
+    LockPickRow0=()
+    LockPickRow1=()
+    LockPickRow2=()
+    LockPickRow3=()
+
+    for i in {0..7}; do
+        LockPickNum[$i]=$((RANDOM % 4))
+    done
+    for pos in "${LockPickNum[@]}"; do
+        if [ "$pos" -ge 3 ]; then 
+            LockPickRow3+=("#")
+        else 
+            LockPickRow3+=(" ")
+        fi
+        if [ "$pos" -ge 2 ]; then 
+            LockPickRow2+=("#")
+        else 
+            LockPickRow2+=(" ")
+        fi
+        if [ "$pos" -ge 1 ]; then 
+            LockPickRow1+=("#")
+        else 
+            LockPickRow1+=(" ")
+        fi
+        if [ "$pos" -ge 0 ]; then 
+            LockPickRow0+=("#")
+        else 
+            LockPickRow0+=(" ")
+        fi
+    done
+}
+
+function lockpicking {
+    LockPickNum=(1 2 3 4 5 6 7 8)
+
+    LockPickInput=()
+    counter=0
+    echo "Pick the Pins:"
+    for i in {0..7}; do
+        read -n 1 eingabe 
+        LockPickInput+=("$eingabe") 
+    done
+    echo " "
+    for i in {0..7}; do
+        if [ "${LockPickInput[$i]}" != "${LockPickNum[$i]}" ]; then
+            echo "Wrong Pins."
+            break 
+        else
+            counter=$((counter + 1))
+        fi
+    done
+
+    if [ "$counter" -eq 8 ]; then
+        echo " "
+        echo "You opened the Gate."
+        echo " "
+        # mv .obscure-prison obscure-prison
+    fi
+}
+
+cat << EOF
+
+You squat down to examine the lock and notice its rather old and should be easy to pick if you know how.
+Standing up straight again you see that on the wall next to it is a carving etched into the stone. 
+Maybe this is the clue you neeed to open the lock
+Start at the deepest pin first
+
+EOF
+
+if [ "$LockPickEnter" -eq 0 ]; then
+#   mv .inprint inprint
+    lockPinGen
+else 
+    lockpicking
+fi
+
+
+
+
+
+
+
+
+
+

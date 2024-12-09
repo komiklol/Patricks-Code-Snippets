@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cat << EOF
+
+During your adventure in Bashcrawl you learned a lot of important things.
+In this Dungeon there is one subtle change when interacting with everything around you. instead of using "./File" you will use ". File"
+
+the "." withtouth the / before it executes the Scrips in the current Terminal.
+This way all Variables can be used as planed.
+The ". File" is the abriviation to "source File"
+
+EOF
+
+# mv scroll .scroll
+# mv .dungeon-entrance dungeon-entrance
+# mv .trader trader
+# mv .blacksmith blacksmith
+# mv .old-man old-man
+
+

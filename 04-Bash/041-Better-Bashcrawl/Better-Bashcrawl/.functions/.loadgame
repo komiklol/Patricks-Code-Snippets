@@ -1,0 +1,13 @@
+#!/bin/bash
+
+savefile=0
+for file in /saves/save-*.sh; do
+
+    saveFileDate=$(echo "$file" | grep -oE '[0-9]+')
+
+    if [ "$saveFileDate" -gt "$savefile" ]; then
+        savefile=$saveFileDate
+    fi
+done
+
+source "saves/save-$savefile.sh"

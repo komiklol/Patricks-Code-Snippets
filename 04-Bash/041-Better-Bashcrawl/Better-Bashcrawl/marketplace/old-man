@@ -1,0 +1,133 @@
+#!/bin/bash
+
+if [ -e "saves/save-*.sh" ]; then
+    savefile=0
+    for file in /saves/save-*.sh; do
+        saveFileDate=$(echo "$file" | grep -oE '[0-9]+')
+        if [ "$saveFileDate" -gt "$savefile" ]; then
+            savefile=$saveFileDate
+        fi
+    done
+    source "save-$savefile.sh"
+fi
+
+if [ -z "$oldman" ]; then
+    ## Path Related ##############################################################
+    CurrentPath=$(pwd)                                                          # Set Current Path
+    username=$(whoami)                                                          # Get the Username of the User
+    length=$((${#username} + 7))                                                # Calculate the length of the Username plus 6 for /home/
+    CuttedPath="${CurrentPath:$length}"                                         # Cut off the /home/username/ part of the Path
+    CuttedPath="${CuttedPath%"marketplace"}"                                    # Add a / to the Cut Path
+    export GamePath="${CuttedPath}marketplace"                                  # The Path to the folder of the game
+    export FunctionPath="${CuttedPath}.functions"                               # The Path to the folder of the funktions
+    ## Player Related ############################################################
+    export death=0                                                              # 0 = Alive, 1 = dead
+    export MAXHP=15                                                             # Max life points of the player
+    export HP=15                                                                # life points of the player
+    export Armor=0                                                              # How much armor you own that reduces damage.
+    export Sword=0                                                              # 0 = No sword, 1 = sword
+    export SwordDMGOriginal=0                                                   # The original damage of the sword
+    export SwordDMG=0                                                           # The damage the sword makes
+    export SwordHits=0                                                          # How many times the sword hit
+    export INVENTORY=()                                                         # Array  for the inventory
+    export Money=0                                                              # Money of the play
+    ## Map Related ###############################################################
+    export SlimeKilledFK=0                                                      # Counter for Slimes that were killed in  "Sinister-Crossing" 
+    export oldman=1                                                             # So the old man cant be talked to twice
+    export SFflooded=1                                                          # 0 = not flooded, 1 = flooded, Sunken-Foyer
+    export OrangeMushroomsMax=5                                                # Set Maximum of Orange Mushrooms
+    export OrangeMushrooms=0                                                    # How Many Orange Mushrooms available atm
+    export PurpleMushroomsMax=10                                                # Set Maximum of Purple Mushrooms
+    export PurpleMushrooms=0                                                    # How Many Purple Mushrooms available atm
+    export PMEntered=0                                                          # If the Player Executed the Script purple-mushroom before
+    export InstructionMushroomGame=0                                            # If the Player Was told how to play the Mushroom Game
+    export InstMGFiT=1                                                          # InstMGFiT = Instructions Mushroom Game First Time, if the Game was Played before (0) or not (1)
+    export InstMGAskAg=1                                                        # InstMGAskAg = Instructions Mushroom Game Ask Again, if the Player wants to be told how to play the Game again (1) or not (0)
+    export ArStLe=2                                                             # ArStLe = Armor-Stand-Leather
+    export ArStIr=1                                                             # ArStIr = Armor-Stand-Iron
+    export ArStCh=4                                                             # ArStCh = Armor-Stand-Chainmail
+    export ArStGo=3                                                             # ArStGo = Armor-Stand-Gold
+    export keepGoHelm=0                                                         # Keep the Helmet of the Armor of Gold
+    export ArmorOfGold=0                                                        # If the Player has interacted with the Armor of Gold
+    export LockPick=()                                                          # Array for the Lockpick
+    export LockPickEnter=0                                                      # If the Player Interactet with the LockPick
+    ## Game Related ##############################################################
+    export GameStartedTime=$(date +"%Y%m%d%H%M")  # The Totall Time the Game started in Digital Form
+    ## Monster Related ###########################################################
+    export MOBHP=0                                                              # Life points of the monster
+    export MOBDMG=0                                                             # The damage the monster makes
+    ## Item Related ##############################################################
+    export MushroomDMGDegrease=0                                                # How much the damage of the player is decreased by an Mushroom
+    export MushroomDMGDegreaseHits=0                                            # How many hits the damage of the player is decreased by an Mushroom
+    export PotionDMGDegrease=0                                                  # How much the damage of the player is decreased by an Potion
+    export PotionDMGDegreaseHits=0                                              # How many hits the damage of the player is decreased by an Potion
+    export Vampireism=0                                                         # How many times the player gets health from an mob hes fighting
+    ## Item Array Related ########################################################
+    export ALLITEMSARRAY=(
+        ## Swords
+        Wooden-Sword Iron-Sword
+        ## Armor
+        Gold-Helmet
+        ## Equipment
+        Bracelet-of-Ghostly-Armor
+        ## Mob Drops
+        Slimy-Core Slimy-Glue
+        ## Potions
+        Healing-Potion-S Healing-Potion-M Healing-Potion-L
+        ## Pickups
+        Purple-Mushroom Green-Mushroom Orange-Mushroom
+        ) # A list of all items that exist
+
+    export ALLITEMSARRAYCOST=(
+        ## Swords
+        4 12             # Wooden-Sword Iron-Sword 
+        ## Armor
+        12               # Gold-Helmet
+        ## Equipment
+        30               # Bracelet-of-Ghostly-Armor
+        ## Mob Drops
+        1 2              # Slimy-Core Slimy-Glue
+        ## Potions
+        15 30 60         # Healing-Potion-S Healing-Potion-M Healing-Potion-L
+        ## Pickups
+        1 0 0            # Purple-Mushroom Green-Mushroom Orange-Mushroom
+        ) # A list of the cost of every item ALLITEMSARRAY
+
+    export USABLEITEMS=(
+        ## Potions
+        Healing-Potion-S Healing-Potion-M Healing-Potion-L
+        ## Pickups
+        Purple-Mushroom Green-Mushroom Orange-Mushroom
+        ) # A list of all usable items
+
+    export POTIONS=(
+        ## Healing
+        Healing-Potion-S Healing-Potion-M Healing-Potion-L
+        ) # A list of all potions
+
+    export ALLBUYABLEITEMS=(
+        ## Potions
+        Healing-Potion-S Healing-Potion-M Healing-Potion-L
+        ) # A list of all items that can be bought
+
+    export ALLBUYABLEITEMSCOST=(
+        ## Potions
+        15 30 60         # Healing-Potion-S Healing-Potion-M Healing-Potion-L
+        ) # A list of the cost of all buy-able items 
+        
+cat << EOF 
+
+Hold on now Child, you do not plan do enter the Dungeon do you?
+You know, no one has ever returned from its depths...
+But if you truly wish to waste the long life that is sill ahead of you...
+I have heard you were once in Bashcrawl?
+use the knowledge you have learned wisely. And may the gods guide you on your way.
+
+EOF
+
+else 
+    echo " "
+    echo "We have already spoken to eachother."
+fi
+
+

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+cat << EOF
+
+A small blue slime attacks you.
+
+EOF
+
+original_directory=$(pwd)
+cd 
+cd "$FunctionPath"
+source .fight
+source .death
+source .mobhp
+source .mobdmg
+source .sword
+source .armor
+source .equipment
+cd "$original_directory"
+
+CheckSword
+CheckArmor
+CheckEquipment
+MOB-Damage 1 2
+MOBNAME="Slime"
+if [ "$Sword" -eq 1 ]; then
+    MOB-Health 2 5
+    fight $MOBHP $SwordDMG $MOBNAME $MOBDMG $death 4 # 4 stand for 1 in 4 chance to miss 
+    if [ "$death" -eq 0 ]; then
+        echo " "
+        echo "you have defeated the slime."
+        echo " "
+        SlimeKilledFK=$((SlimeKilledFK + 1))
+        if [ $SlimeKilledFK -eq 1 ]; then
+            mv .slime-remains slime-remains
+        fi
+    fi
+else 
+    echo " "
+    echo "The $MOBNAME attacks and there is nothing you can do ."
+    echo "You take 2HP damage. Quickly flee and exit the room."
+    echo " "
+    HP=$((HP - 2))
+fi

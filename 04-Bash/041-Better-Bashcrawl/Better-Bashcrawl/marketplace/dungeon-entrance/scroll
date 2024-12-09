@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cat << EOF
+
+The entrance to the Dungeon looks like an old mine. An inscription on the wall next to the door reads "only the bravest and most foolish would attempt to defeat this dungeon" 
+As soon as you enter an unsetteling feeling spreads aroudn your body. Deep in your heart you know that there is no turning back.
+beyond the door is a small room with steps leading down that are carved out of the ground and beams supporting the celing which are covered in spiderwebs.
+There are old burned out lamps hanging from them and looking down the stairs there is only the faintest light comming from the dungeon. 
+When you listen closely you can hear the faintest splashing of water from the distance. 
+
+EOF

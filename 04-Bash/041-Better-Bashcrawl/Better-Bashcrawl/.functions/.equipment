@@ -1,0 +1,14 @@
+#!/bin/bash
+
+function CheckEquipment {
+    MAXHP=15
+    for i in "${INVENTORY[@]}"; do
+        case $i in 
+            "Bracelet-of-Ghostly-Armor")
+                MAXHP=$((MAXHP+5))
+                ;;
+            *)
+                ;;
+        esac
+    done
+}

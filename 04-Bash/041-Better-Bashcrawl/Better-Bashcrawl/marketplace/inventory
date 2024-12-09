@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd
+cd "$FunctionPath"
+source .inventory
+source .potion
+source .mushrooms
+cd
+cd "$GamePath"
+
+ShowInventory

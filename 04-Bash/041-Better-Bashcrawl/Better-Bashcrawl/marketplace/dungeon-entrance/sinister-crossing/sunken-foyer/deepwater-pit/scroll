@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cat << EOF
+
+You enter a circular room with a giant pit in the center.
+A few feet down in the pit you notice the surface of the watter glimmering.
+The room is filled with a cold blue light that is comming from glowing algea that grow on the walls of the pit.
+The light mixed with the shimmering water makes everything seem unreal and a sense of calm settels over you.
+On the other side of the pit you see big iron door.
+
+EOF

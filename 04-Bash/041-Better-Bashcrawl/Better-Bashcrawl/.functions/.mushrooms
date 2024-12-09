@@ -1,0 +1,55 @@
+#!bin/bash 
+
+
+function MushroomUse {
+    Mushroom=$1
+    case $Mushroom in
+        Purple-Mushroom)
+            for ((i = 0; i < ${#INVENTORY[@]}; i++)); do
+                if [ "${INVENTORY[$i]}" = "$Mushroom" ]; then
+                    unset INVENTORY[$i]
+                    break
+                fi
+            done
+            HP=$((HP - 2))
+            echo " "
+            echo "You ate a Purple Mushroom."
+            echo "You lost 2 HP."
+            echo "You now have $HP HP."
+        ;;
+        Green-Mushroom)
+            for ((i = 0; i < ${#INVENTORY[@]}; i++)); do
+                if [ "${INVENTORY[$i]}" = "$Mushroom" ]; then
+                    unset INVENTORY[$i]
+                    break
+                fi
+            done
+            MushroomDMGDegrease=0.25
+            MushroomDMGDegreaseHits=$((MushroomDMGDegreaseHits + 30))
+            echo " "
+            echo "You ate a Green Mushroom."
+            echo "You will deal 25% less damage for 30 hits."
+        ;;
+        Orange-Mushroom)
+            for ((i = 0; i < ${#INVENTORY[@]}; i++)); do
+                if [ "${INVENTORY[$i]}" = "$Mushroom" ]; then
+                    unset INVENTORY[$i]
+                    break
+                fi
+            done
+            Vampireism=$((Vampireism + 3))
+            echo " "
+            echo "You ate a Orange Mushroom."
+            echo "You will Heal 10% of the damage you deal for 3 hits."
+        ;;
+        *)
+            echo "##############################################"
+            echo "This is an Error in the MushroomUse Function."
+            echo "Pls Report this Bug to the Developer."
+            echo "##############################################"
+        ;;
+    esac
+    INVENTORY=("${INVENTORY[@]}")
+}
+
+

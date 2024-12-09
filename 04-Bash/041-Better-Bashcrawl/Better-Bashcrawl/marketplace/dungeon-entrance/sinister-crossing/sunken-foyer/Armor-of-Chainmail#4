@@ -1,0 +1,24 @@
+#!/bin/bash
+# ArStGo = Armor-Stand-Gold
+
+original_directory=$(pwd)
+cd 
+cd "$FunctionPath"
+source .sunkenfoyer
+cd "$original_directory"
+
+cat << EOF
+
+Amanda
+## Text about armor here
+
+EOF
+
+
+cat << EOF
+
+Amanda
+## Looks like you could move this armor around the room
+
+EOF
+

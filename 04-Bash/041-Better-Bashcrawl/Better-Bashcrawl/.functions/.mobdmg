@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# This function is used for the Damage of a Monster
+
+function MOB-Damage {           # MOB-Damage
+    MAX=$1
+    MIN=$2
+    rand=$(( RANDOM%$MAX+$MIN ))  # MAX and MIN. Reminder: Max= Max+Min
+    export MOBDMG=$rand                # MOBDMG
+}
+
+# MOBDMG=Mob-Damage 1 2     # MOBDMG 2-3

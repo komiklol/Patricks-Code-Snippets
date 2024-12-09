@@ -1,0 +1,285 @@
+#!/bin/bash
+
+cat << EOF
+
+Greetings, weary traveler!
+EOF
+
+
+function ShowMoney {
+    cat << EOF
+-----------------------------------
+You have $Money Gold.
+-----------------------------------
+EOF
+}
+
+function InventroySortAndSell {
+
+    declare -a ITEMSTOSELLITEM=()
+    declare -a ITEMSTOSELLNUMBER=()
+    declare -a ITEMSTOSELLCOST=()
+
+    ShowMoney
+    cat << EOF
+Your Inventory:
+-----------------------------------
+EOF
+
+    for item in "${ALLITEMSARRAY[@]}"; do
+        counter=0
+        for inv_item in "${INVENTORY[@]}"; do
+            if [ "$item" = "$inv_item" ]; then
+                ((counter++))
+            fi
+        done
+        if [ "$counter" -gt 0 ]; then
+            ITEMSTOSELLITEM+=("$item")
+            ITEMSTOSELLNUMBER+=("$counter")
+        for i in "${!ALLITEMSARRAY[@]}"; do
+            if [ "${ALLITEMSARRAY[$i]}" == "$item" ]; then
+                ITEMSTOSELLCOST+=("${ALLITEMSARRAYCOST[$i]}")
+            fi
+        done
+        fi
+    done
+
+    for ((i = 0; i < ${#ITEMSTOSELLITEM[@]}; i++)); do
+        echo "| ${ITEMSTOSELLITEM[$i]} - ${ITEMSTOSELLNUMBER[$i]} - each ${ITEMSTOSELLCOST[$i]} Gold"
+    done
+    echo "| "
+    echo "| Close - y"    
+
+    repeateitem=1
+    until [ $repeateitem -eq 0 ]; do
+        echo "-----------------------------------"
+        read -p "What would you like to sell? " eingabe
+        itemfound=0
+        counter=0
+        
+        for i in "${ALLITEMSARRAY[@]}"; do
+            if [ "$i" = "$eingabe" ]; then
+                itemfound=1
+                break
+            fi
+            counter=$((counter + 1))
+        done
+        position=$counter
+        if [ "$eingabe" = "y" ]; then
+            repeateitem=0
+        fi
+        if [ $itemfound -eq 1 ]; then
+            repeateamount=1
+            until [ $repeateamount -eq 0 ]; do
+                echo " "
+                echo "-----------------------------------"
+                read -p "How many do you want to sell? " anzahl
+                counter=0
+                
+                for inv_item in "${INVENTORY[@]}"; do
+                    if [ "$eingabe" = "$inv_item" ]; then
+                        ((counter++))
+                    fi
+                done
+                if [ $anzahl -le $counter ]; then
+                    Gold=0
+                    Gold=$((Gold + (ALLITEMSARRAYCOST[$position] * $anzahl)))
+                    echo " "
+                    echo "-----------------------------------"
+                    echo "Would you like to sell $anzahl, $eingabe for $Gold Gold?"
+                    echo "-----------------------------------"
+                    read -p "3) Yes!, 2) No, 1) Different quantity, 0) Different Item. " eingabe3
+                    case $eingabe3 in
+                        "0")
+                            repeateitem=1
+                            break
+                            ;;
+                        "1")
+                            repeateamount=1
+                            ;;
+                        "2")
+                            echo " "
+                            echo "-----------------------------------"
+                            echo "Trade has been canceled."
+                            repeateamount=0
+                            repeateitem=0
+                            break
+                            ;;
+                        "3")
+                            Money=$((Money + Gold))
+                            echo " "
+                            echo "-----------------------------------"
+                            echo "You sold $anzahl, $eingabe for $Gold Gold."
+                            echo "You now own $Money Gold."
+                            echo "-----------------------------------"
+                            echo "Is there something else I can do for you dear Traveler?"
+                            counter=0
+                            for i in "${!INVENTORY[@]}"; do
+                                if [ "${INVENTORY[$i]}" == "$eingabe" ]; then
+                                    if [ $counter -lt $anzahl ]; then
+                                        unset "INVENTORY[$i]"
+                                        counter=$((counter + 1))
+                                    else
+                                        break
+                                    fi
+                                fi
+                            done
+                            INVENTORY=("${INVENTORY[@]}")
+                            counter=0
+                            repeateamount=0
+                            repeateitem=0
+                            ;;
+                        *)
+                            echo " "
+                            echo "I beg your pardon? I did not quite understand."
+                            ;;
+                    esac
+                else
+                    cat << EOF 
+
+"You must have mistaken."
+"I belive you only have $counter $eingabe."
+
+EOF
+                    repeateamount=1
+                fi
+            done
+        else 
+            if [ "$eingabe" != "y" ]; then
+                echo " "
+                echo "You do not own this Item or did you mean something else?"
+                itemfoundno=1
+            fi
+        fi
+    done
+    echo " "
+}
+
+function BuyItems {
+    endbuy=0
+    endquant=0
+    cat << EOF
+
+Hello there, weary traveler!
+What can i sell to you today?
+
+EOF
+    until [ "$endbuy" -eq 1 ]; do
+        endquant=0
+        ShowMoney
+        for i in "${!ALLBUYABLEITEMS[@]}"; do
+            cost=$((ALLBUYABLEITEMSCOST[$i] + (ALLBUYABLEITEMSCOST[$i] * 40 / 100)))
+            echo "| ${ALLBUYABLEITEMS[$i]} - $cost Gold"
+        done
+        echo "| "
+        echo "| Close - y"
+        echo "-----------------------------------"
+        read -p "What do you want to buy? " eingabe
+        itemfound=0
+        for i in "${ALLBUYABLEITEMS[@]}"; do
+            if [ "$i" = "$eingabe" ]; then
+                itemfound=1
+                cost=0
+                cost=$((ALLBUYABLEITEMSCOST[$i] + ((ALLBUYABLEITEMSCOST[$i] * 40 / 100)))) 
+                break
+            fi
+        done
+        if [ "$itemfound" -eq 1 ]; then
+            echo "Money= $Money  -  Cost= $cost"
+            if [ "$Money" -ge "$cost" ]; then
+                until [ "$endquant" -eq 1 ]; do
+                    echo " "
+                    echo "-----------------------------------"
+                    read -p "How many $eingabe would you like to buy? " eingabe3
+                    cost=$((cost * eingabe3))
+                    echo " "
+                    echo "-----------------------------------"
+                    echo "Would you like to buy $eingabe3 x, $eingabe for $cost Gold?"
+                    echo "-----------------------------------"
+                    read -p "3) Yes!, 2) No, 1) Different Item, 0) Different quantity. " eingabe2
+                    case $eingabe2 in
+                        "0")
+                            endquant=0
+                            ;;
+                        "1")
+                            endquant=1
+                            endbuy=0
+                            break
+                            ;;
+                        "2")
+                            echo " "
+                            echo "-----------------------------------"
+                            echo "Trade has been canceled."
+                            endquant=1
+                            endbuy=1
+                            ;;
+                        "3")
+                            Money=$((Money - cost))
+                            echo " "
+                            echo "-----------------------------------"
+                            echo "You bought $eingabe3 x, $eingabe for $cost Gold."
+                            echo "You now own $Money Gold."
+                            echo "-----------------------------------"
+                            echo "Is there something else I can do for you dear Traveler?"
+                            for ((i = 0; i < $eingabe3; i++)); do
+                                INVENTORY+=("$eingabe")
+                            done
+                            endquant=1
+                            endbuy=1
+                            ;;
+                        *)
+                            echo " "
+                            echo "I beg your pardon? I did not quite understand."
+                            echo " "
+                            endquant=0
+                            ;;
+                    esac
+                done
+            else
+                echo " "
+                echo "-----------------------------------"
+                echo "You do not have enough Gold to buy this Item."
+                echo "-----------------------------------"
+                echo "Is there something else I can do for you dear Traveler?"
+            fi
+        elif [ "$eingabe" = "y" ]; then
+            echo " "
+            echo "Farewell noble adventurer."
+            endbuy=1
+            endquant=1
+        else
+            echo " "
+            echo "I beg your pardon? I did not quite understand."
+            echo " "
+        fi
+    done
+}
+
+end1=0
+endeingabe=0
+
+until [ $endeingabe -eq 1 ]; do
+    echo " "
+    echo "-----------------------------------"
+    echo "Would you like to buy or sell something?"
+    read -p "(1) Sell. (2) Buy. (3) Farewell. " eingabe
+    case $eingabe in
+        "1") 
+            InventroySortAndSell
+            endeingabe=0
+            ;;
+        "2")
+            BuyItems
+            endeingabe=0
+            ;;
+        "3")
+            echo " "
+            echo "Farewell noble adventurer."
+            endeingabe=1
+            ;;
+        *)
+            echo " "
+            echo "I beg your pardon? I did not quite understand."
+            ;;
+    esac
+done

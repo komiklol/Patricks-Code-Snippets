@@ -1,0 +1,79 @@
+#!/bin/bash
+
+function assciartkey {
+for i in {0..26}; do
+    echo -n " "
+done
+echo "┌───────┐"
+for i in {0..3}; do
+    echo -n " "
+done
+for i in {0..22}; do
+    echo -n "_"
+done
+echo "│┌─────┐└┐"
+echo -n "   /"
+for i in {0..22}; do
+    echo -n "="
+done
+echo "┼┤     │@│"
+for i in {0..7}; do
+    echo -n " "
+done
+for i in "${LockPickRow0[@]}"; do
+    echo -n "$i"
+done
+for i in {0..8}; do
+    echo -n " "
+done
+echo -n "\_"
+echo "│└─────┘┌┘"
+for i in {0..7}; do
+    echo -n " "
+done
+for i in "${LockPickRow1[@]}"; do
+    echo -n "$i"
+done
+for i in {0..10}; do
+    echo -n " "
+done
+echo "└───────┘"
+for i in {0..7}; do
+    echo -n " "
+done
+for i in "${LockPickRow2[@]}"; do
+    echo -n "$i"
+done
+echo " "
+for i in {0..7}; do
+    echo -n " "
+done
+for i in "${LockPickRow3[@]}"; do
+    echo -n "$i"
+done
+echo " "
+}
+
+cat << EOF
+
+you step closer to the carving and take a moment to look at it and memorise the pattern
+
+EOF
+
+assciartkey
+
+read -p "Do you have the carving in mind? (y/n) " -n 1 -r yesno
+end8=0
+
+until [[ "$end8" -eq 1 ]]; do
+    if [[ $yesno =~ ^[Yy]$ ]]; then
+        for i in {0..99}; do
+            echo " "
+        done
+        end8=1
+    elif [[ $yesno =~ ^[Nn]$ ]]; then
+        echo "Then look at it again."
+    fi
+    echo " "
+done
+

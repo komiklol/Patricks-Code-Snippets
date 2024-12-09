@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cat << EOF
+
+As you look around the entrance you notice a Skeleton that is sitting down leaning against the wall.
+It seems to be the remains of an Adventurers that lost their life here.
+You walk closer and notice that there in its bony grasp lies a Wodden Sword.
+Steeling yourself you grab the Sword and pull it from its hand.
+A single finger clings onto the hilt of it as you pull.
+You take a moment of silent for this fallen hero, honoring their sacrifice.
+With a final goodbye you straighten, your new sword tight in you hand.
+
+EOF
+
+export Sword=1
+export SwordDMG=4
+export INVENTORY+=(Wooden-Sword)
+
+
+
+
+
+

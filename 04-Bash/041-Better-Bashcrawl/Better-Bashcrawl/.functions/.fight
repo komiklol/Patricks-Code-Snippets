@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# This function is used to fight a monster
+
+function fight {
+    MOBHP=$1                # MOBHP (Getting from the Function .mobhp)
+    SwordDMG=$2             # SwordDMG
+    MOBNAME=$3              # MOBNAME
+    MOBDMG=$4               # MOBDMG (Getting from the Function .mobdmg)
+    death=$5                # death (Getting from the Function .death)
+    chance=$6               # chance für die hitchance, 1 in X
+ 
+    until [ "$MOBHP" -le 0 ] || [ "$death" -eq 1 ]; do            # $MOBHP
+        read -p "Input Number: " input
+        rest=$((($SwordDMG * $input) % $chance))                      #
+        rand=$(( RANDOM%$chance ))                                    # 3 zu 1 chance
+        if [ "$rest" -eq "$rand" ]; then                              #
+	        treffer=0
+        else 
+            treffer=1
+        fi
+        if [ "$treffer" -eq 1 ]; then
+            echo "You dealt $SwordDMG Damage." 
+            MOBHP=$(($MOBHP - $SwordDMG))
+            Vampire
+            SwordHit
+        else
+            echo "You missed $MOBNAME."           # $MOBNAME
+        fi 
+        if [ "$MOBHP" -gt 0 ]; then
+            echo "The $MOBNAME attacks!"                  # MOBNAME
+            if [ "$Armor" -eq 0 ]; then
+                HP=$(($HP - $MOBDMG))                       # $MOBDMG
+            else
+                if [ "$((Armor - MOBDMG))" -le 0 ]; then      # MOBDMG 
+                    HP=$(($HP - ($Armor - $MOBDMG)))        # MOBDMG
+                else
+                    HP=$(($HP - 1))
+                fi
+            fi
+        fi
+        if [ "$HP" -le 0 ]; then
+            DEATH
+        fi
+        if [ "$death" -eq 0 ]; then
+        echo " "
+        echo "Your HP: $HP"
+        echo "HP of $MOBNAME: $MOBHP"               # $MOBName
+        echo " "
+        fi
+    done
+
+    if [ "$death" -eq 0 ]; then
+        echo "You defeated the $MOBNAME."                 # MOBNAME
+    fi 
+}
+
+# fight $MOBHP $SwordDMG $MOBNAME $MOBDMG $death $chance

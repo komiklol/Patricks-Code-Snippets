@@ -1,0 +1,10 @@
+#!bin/bash/
+
+cat << EOF
+
+You head right and follow a long empty hallway until you reach a gate.
+The air here seems stuffy and humid and as you look closer at the gate you see it hase rusted over.
+It seems as if it would be easy to open but as you go to do so it doesnt move an inch. You try again but the lock wont buge.
+Maybe you should take a closer look at the lock.
+
+EOF

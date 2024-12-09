@@ -1,0 +1,102 @@
+#!/bin/bash
+# ArStLe = Armor-Stand-Leather
+# ArStIr = Armor-Stand-Iron
+# ArStGo = Armor-Stand-Gold
+# ArStCh = Armor-Stand-Chainmail
+
+
+function armorstandpositioning {
+    ########################### Armor-Stand-Positioning #####################################
+    ArmorStands=(Armor-of-Gold Armor-of-Iron Armor-of-Leather Armor-of-Chainmail)
+    directory=$(pwd)
+
+    counter=0
+    for file in "$directory"/*; do
+        filename=$(basename "$file")
+        for armorstandname in ${ArmorStands[@]}; do
+            if [[ "$filename" =~ ${armorstandname}#[1-5] ]]; then
+                counter=$((counter+1))
+                ArStName="${filename%%#*}"
+                ArStNumber="${filename##*#}"
+                case "$ArStName" in
+                "Armor-of-Gold")
+                    ArStGo="$ArStNumber"
+                    ;;
+                "Armor-of-Iron")
+                    ArStIr="$ArStNumber"
+                    ;;
+                "Armor-of-Leather")
+                    ArStLe="$ArStNumber"
+                    ;;
+                "Armor-of-Chainmail")
+                    ArStCh="$ArStNumber"
+                    ;;
+                esac
+            fi
+        done
+    done
+    variables=("ArStCh" "ArStIr" "ArStLe" "ArStGo")
+    twoequal=0
+    for ((i=0; i<${#variables[@]}; i++)); do
+        for ((j=i+1; j<${#variables[@]}; j++)); do
+            if [ "${!variables[i]}" -eq "${!variables[j]}" ]; then
+                twoequal=1
+                break 2
+            fi
+        done
+    done
+    if [ "$counter" -ne 4 ] && [ "$twoequal" -eq 0 ]; then
+        echo "Amanda The Armor Stands are not named correctly. Please check the names of the Armor Stands."
+        echo "Amanda They should be namend with the following names and a number from 1-5:"
+        echo "Armor-of-Gold#0"
+        echo "Armor-of-Iron#0"
+        echo "Armor-of-Leather#0"
+        echo "Armor-of-Chainmail#0"
+        echo " "
+    fi
+    if [ "$twoequal" -eq 1 ]; then
+        echo "Two or more Armor Stands are Standing at the Same Position. Please check the position of the Armor Stands."
+        echo "They should be standing on the Position 1 to 5"
+        echo " "
+    fi
+
+    # Debug
+    ArStGo=1
+    ArStIr=2
+    ArStLe=3
+    ArStCh=4
+    ########################### Armor-Stand-Right-Position #####################################
+    if [ "$ArStGo" -eq 1 ] && [ "$ArStIr" -eq 2 ] && [ "$ArStLe" -eq 3 ] && [ "$ArStCh" -eq 4 ]; then
+cat << EOF
+
+Amanda
+The Armor Stands are in the right position.
+The Door opens and you can enter the next room.
+
+EOF
+        if [ "$keepGoHelm" -eq 0 ]; then
+            if [ -z "$sunkenfoyertreasurechest" ]; then
+cat << EOF
+
+Amanda
+## An Treasure Chest appears in the middle of the room.
+
+EOF
+                read -p "Do you want to open the Treasure Chest? [y/n] " -n 1 -r openTreasureChest
+                echo
+                if [ "$openTreasureChest" = "y" ]; then
+                    echo "You open the Treasure Chest and find a bracelet-of-Ghostly-Armor and an Iron-Sword."
+                    echo "You put the bracelet on and feel stronger."
+                    echo "You got 5 more Max HP."
+                    echo "The new Sword is Heavier then the Wooden One."
+                    echo "It also Deals more Damage."
+                    HPMAX=$((HPMAX+5))
+                    INVENTORY+=("Bracelet-of-Ghostly-Armor")
+                    export sunkenfoyertreasurechest=1
+                elif [ "$openTreasureChest" = "n" ]; then
+                    echo "You Leave the Treasure Chest alone."
+                fi 
+            fi
+        fi
+    fi
+}

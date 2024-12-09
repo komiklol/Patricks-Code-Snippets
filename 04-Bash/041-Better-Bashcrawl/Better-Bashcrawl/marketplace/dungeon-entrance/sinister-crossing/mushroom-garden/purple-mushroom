@@ -1,0 +1,160 @@
+#!/bin/bash
+
+function instruction {
+    if [ "$InstMGAskAg" -eq 1 -o "$InstMGFiT" -eq 1 ]; then
+        endasking=0
+        until [ "$endasking" -eq 1 ]; do
+            InstMGFiT=0
+            echo " "
+            echo "Do you want to read the Instructions ?"
+            read -p "Yes / No / Dont Ask Again (1/2/3): " -n 1 MushroomGameInst
+            echo " "
+            case $MushroomGameInst in
+                1) 
+                    cat << EOF
+
+This little game is about finding Purple Mushrooms in a 10x10 field.
+You can type in two numbers to search for a Mushroom.
+Enter the number on the y axsis First, then you enter the number on the x axsis.
+The Purple Mushrooms are marked with a $MushroomIcon.
+You can exit the Game by typing in 99.
+EOF
+                    endasking=1
+                    ;;
+                2)
+                    endasking=1
+                    ;;
+                3)
+                    endasking=1
+                    export InstMGAskAg=0
+                    ;;
+                *)
+                    echo "Wrong input ($MushroomGameInst)"
+                    ;;
+            esac
+        done
+    fi
+}
+
+function MushroomGame {
+    MushArray=()
+    Alphabet=("A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z")
+    MushroomIcon="§"
+
+    instruction
+        
+    for i in {0..99}; do
+        MushArray[$i]=" "
+    done
+    counter=$PurpleMushrooms
+    for (( i=0; i<=$counter - 1; i++)); do
+        rand=$(( RANDOM % 99 ))
+        MushArray[$rand]=$MushroomIcon
+    done
+    for i in {0..99}; do
+        if [ "${MushArray[$i]}" = " " ]; then
+            MushArray[$i]=${Alphabet[$((RANDOM % 26))]}
+        fi
+    done
+    CloseGame=0
+    if [ "$PurpleMushrooms" -eq 0 ]; then 
+        CloseGame=1
+        echo " "
+        echo "There are currently no Purple Mushrooms available."
+    fi
+    until [ "$CloseGame" -eq 1 ]; do
+        echo " "
+        echo "You're searching: $MushroomIcon"
+        echo " "
+        echo "  |0|1|2|3|4|5|6|7|8|9|"
+        echo "  _____________________"
+        echo "0 |${MushArray[0]}|${MushArray[1]}|${MushArray[2]}|${MushArray[3]}|${MushArray[4]}|${MushArray[5]}|${MushArray[6]}|${MushArray[7]}|${MushArray[8]}|${MushArray[9]}|"          
+        echo "1 |${MushArray[10]}|${MushArray[11]}|${MushArray[12]}|${MushArray[13]}|${MushArray[14]}|${MushArray[15]}|${MushArray[16]}|${MushArray[17]}|${MushArray[18]}|${MushArray[19]}|"          
+        echo "2 |${MushArray[20]}|${MushArray[21]}|${MushArray[22]}|${MushArray[23]}|${MushArray[24]}|${MushArray[25]}|${MushArray[26]}|${MushArray[27]}|${MushArray[28]}|${MushArray[29]}|"          
+        echo "3 |${MushArray[30]}|${MushArray[31]}|${MushArray[32]}|${MushArray[33]}|${MushArray[34]}|${MushArray[35]}|${MushArray[36]}|${MushArray[37]}|${MushArray[38]}|${MushArray[39]}|"          
+        echo "4 |${MushArray[40]}|${MushArray[41]}|${MushArray[42]}|${MushArray[43]}|${MushArray[44]}|${MushArray[45]}|${MushArray[46]}|${MushArray[47]}|${MushArray[48]}|${MushArray[49]}|"          
+        echo "5 |${MushArray[50]}|${MushArray[51]}|${MushArray[52]}|${MushArray[53]}|${MushArray[54]}|${MushArray[55]}|${MushArray[56]}|${MushArray[57]}|${MushArray[58]}|${MushArray[59]}|"          
+        echo "6 |${MushArray[60]}|${MushArray[61]}|${MushArray[62]}|${MushArray[63]}|${MushArray[64]}|${MushArray[65]}|${MushArray[66]}|${MushArray[67]}|${MushArray[68]}|${MushArray[69]}|"          
+        echo "7 |${MushArray[70]}|${MushArray[71]}|${MushArray[72]}|${MushArray[73]}|${MushArray[74]}|${MushArray[75]}|${MushArray[76]}|${MushArray[77]}|${MushArray[78]}|${MushArray[79]}|"          
+        echo "8 |${MushArray[80]}|${MushArray[81]}|${MushArray[82]}|${MushArray[83]}|${MushArray[84]}|${MushArray[85]}|${MushArray[86]}|${MushArray[87]}|${MushArray[88]}|${MushArray[89]}|"          
+        echo "9 |${MushArray[90]}|${MushArray[91]}|${MushArray[92]}|${MushArray[93]}|${MushArray[94]}|${MushArray[95]}|${MushArray[96]}|${MushArray[97]}|${MushArray[98]}|X|"
+
+        EingabeTrue=0
+        until [ "$EingabeTrue" -eq 1 ]; do
+            read -p "Type two numbers: " -n 1 -r eingabe1
+            read -n 1 eingabe2
+            echo " "
+            if [ "$eingabe1" -ge 0 -a "$eingabe1" -le 9 ] && [ "$eingabe2" -ge 0 -a "$eingabe2" -le 9 ]; then
+                if [ "$eingabe1" -eq 9 -a "$eingabe2" -eq 9 ]; then
+                    CloseGame=1
+                    EingabeTrue=1
+                fi
+                EingabeTrue=1
+                if [ "$eingabe1" -eq 0 -a "$CloseGame" -eq 0 ]; then
+                    PositionNumber="$eingabe2"
+                else
+                    PositionNumber="$eingabe1$eingabe2"
+                fi
+            else 
+                echo "Your input was wrong ($eingabe1 - $eingabe2)"
+            fi
+        done
+
+        if [ "${MushArray[$PositionNumber]}" = "$MushroomIcon" ]; then
+            PurpleMushrooms=$(($PurpleMushrooms - 1))
+            echo " "
+            echo "You picked up a Purple Mushroom"
+            MushArray[$PositionNumber]="#"
+            INVENTORY+=("Purple-Mushroom")
+        else
+            if [ "$CloseGame" -ne 1 ]; then
+                echo "There was no Purple Mushroom"
+            fi
+        fi
+        if [ "$PurpleMushrooms" -eq 0 ]; then
+            CloseGame=1
+            echo "There are no Purple Mushrooms left."
+        fi
+    done
+}
+
+if [ "$PMEntered" -eq 0 ]; then                                            # if the player has not entered the script before
+   PMEntered=1                                                             # Purple Mushroom entered, sets the variable to 1 to signal the player was here before
+   LastCheckedTime=$GameStartedTime                                        # Set the Last Checked Time to the Time the Game started
+fi
+
+CurrentTime=$(date +"%Y%m%d%H%M")    # Sets the Current time to a digital time format 
+
+if [ "$CurrentTime" -gt "$LastCheckedTime" ]; then
+    counter=0
+    for (( l=$LastCheckedTime; l<=$CurrentTime; l++ )); do
+        counter=$(($counter + 1))
+    done
+    i=0
+    for (( i=$counter; i>=5; i-=5 )); do
+        if [ "$PurpleMushrooms" -lt "$PurpleMushroomsMax" ]; then
+            PurpleMushrooms=$(($PurpleMushrooms+1))
+        else 
+            PurpleMushrooms=$PurpleMushroomsMax
+        fi
+    done
+    counter=$((i + 5))
+    LastCheckedTime=$CurrentTime
+fi
+
+
+cat << EOF
+There are some smaller Purple Mushrooms growing on the ground.
+Do you want to pick them up ?
+EOF
+read -p "Yes or No (y/n): " -n 1 -s eingabe
+if [ "$eingabe" = "y" ]; then
+    echo " "
+    MushroomGame
+elif [ "$eingabe" = "n" ]; then
+    echo " "
+    echo "You leave the Mushrooms and go away."
+
+fi
+
+

@@ -1,0 +1,180 @@
+#!/bin/bash
+
+# This script contains the functions for the potions.
+
+function usepotion {
+    potion=$1
+    info=$2
+    usepotionitem=$3
+
+    case $potion in
+    Healing-Potion-S)
+        HPAFTERUSE=$((HP + 5))
+        if [ "$HPAFTERUSE" -gt "$MAXHP" ]; then
+            HPAFTERUSE=$MAXHP
+        fi
+        if [ "$info" -eq 1 ]; then 
+            cat << EOF
+-----------------------------------
+Healing-Potion-S:
+This Potion will heal you for 5 HP.
+Youre HP Is $HP and is going,
+to be $HPAFTERUSE.
+Do you want to use it? (y/n)
+-----------------------------------
+EOF
+            read -n 1 -s eingabe
+            if [ "$eingabe" = "y" ]; then
+                usepotionitem=1
+            elif [ "$eingabe" = "n" ]; then
+                usepotionitem=0
+            else 
+                echo "-----------------------------------"
+                echo "Please enter y or n."
+                echo "-----------------------------------"
+            fi
+        fi
+        if [ "$usepotionitem" -eq 1 ]; then
+            if [ "$HP" -eq "$MAXHP" ]; then
+                echo "-----------------------------------"
+                echo "You already have full HP."
+                echo "-----------------------------------"
+            else
+                HP=$HPAFTERUSE
+                echo "-----------------------------------"
+                echo "You used a Healing Potion (S)."
+                echo "You now have $HP HP."
+                echo "-----------------------------------"
+                for i in "${!INVENTORY[@]}"; do
+                    if [ "${INVENTORY[$i]}" == "$eingabe" ]; then
+                        unset "INVENTORY[$i]"
+                        break
+                    fi
+                done
+            fi
+        fi
+    ;;
+    Healing-Potion-M)
+        HPAFTERUSE=$((HP + 15))
+        if [ "$HPAFTERUSE" -gt "$MAXHP" ]; then
+            HPAFTERUSE=$MAXHP
+        fi
+        if [ "$info" -eq 1 ]; then 
+            cat << EOF
+-----------------------------------
+Healing-Potion-M:
+This Potion will heal you for 15 HP.
+Youre HP Is $HP and is going,
+to be $HPAFTERUSE.
+Do you want to use it? (y/n)
+-----------------------------------
+EOF
+            read -n 1 -s eingabe
+            if [ "$eingabe" = "y" ]; then
+                usepotionitem=1
+            elif [ "$eingabe" = "n" ]; then
+                usepotionitem=0
+            else 
+                echo "-----------------------------------"
+                echo "Please enter y or n."
+                echo "-----------------------------------"
+            fi
+        fi
+        if [ "$usepotionitem" -eq 1 ]; then
+            if [ "$HP" -eq "$MAXHP" ]; then
+                echo "-----------------------------------"
+                echo "You already have full HP."
+                echo "-----------------------------------"
+            else
+                HP=$HPAFTERUSE
+                echo "-----------------------------------"
+                echo "You used a Healing Potion (M)."
+                echo "You now have $HP HP."
+                echo "-----------------------------------"
+                for ((i = 0; i < ${#INVENTORY[@]}; i++)); do
+                    if [ "${INVENTORY[$i]}" = "$potion" ]; then
+                        unset INVENTORY[$i]
+                        break
+                    fi
+                done
+            fi
+        fi
+    ;;
+    Healing-Potion-L)
+        HPAFTERUSE=$((HP + 30))
+        if [ "$HPAFTERUSE" -gt "$MAXHP" ]; then
+            HPAFTERUSE=$MAXHP
+        fi
+        if [ "$info" -eq 1 ]; then 
+            cat << EOF
+-----------------------------------
+Healing-Potion-L:
+This Potion will heal you for 30 HP.
+Youre HP Is $HP and is going,
+to be $HPAFTERUSE.
+Do you want to use it? (y/n)
+-----------------------------------
+EOF
+            read -n 1 -s eingabe
+            if [ "$eingabe" = "y" ]; then
+                usepotionitem=1
+            elif [ "$eingabe" = "n" ]; then
+                usepotionitem=0
+            else 
+                echo "-----------------------------------"
+                echo "Please enter y or n."
+                echo "-----------------------------------"
+            fi
+        fi
+        if [ "$usepotionitem" -eq 1 ]; then
+            if [ "$HP" -eq "$MAXHP" ]; then
+                echo "-----------------------------------"
+                echo "You already have full HP."
+                echo "-----------------------------------"
+            else
+                HP=$HPAFTERUSE
+                echo "-----------------------------------"
+                echo "You used a Healing Potion (L)."
+                echo "You now have $HP HP."
+                echo "-----------------------------------"
+                for ((i = 0; i < ${#INVENTORY[@]}; i++)); do
+                    if [ "${INVENTORY[$i]}" = "$potion" ]; then
+                        unset INVENTORY[$i]
+                        break
+                    fi
+                done
+            fi
+        fi
+    ;;
+    *)
+        echo "-----------------------------------"
+        echo "This Potion does not exist."
+        echo "-----------------------------------"
+    esac
+    INVENTORY=("${INVENTORY[@]}")
+
+}
+
+function potionfunction {
+
+    potion=$1
+    end4=0
+
+    until [ "$end4" -eq 1 ]; do   
+        echo "-----------------------------------"
+        echo "You want to use $potion. You wish for Information? (y/n)"
+        echo "-----------------------------------"
+        read -n 1 -s infoeingabe
+        if [ "$infoeingabe" = "y" ]; then
+            usepotion $potion 1 0                   # usepotion = function, $potion = the potion to use, first number = 0 for no info - 1 for info, secod number = 0 dont use - 1 use.
+            end4=1
+        elif [ "$infoeingabe" = "n" ]; then
+            end4=1
+            usepotion $potion 0 1                   # usepotion = function, $potion = the potion to use, first number = 0 for no info - 1 for info, secod number = 0 dont use - 1 use. 
+        else 
+            echo "-----------------------------------"
+            echo "Please enter y or n."
+            echo "-----------------------------------"
+        fi
+    done
+}

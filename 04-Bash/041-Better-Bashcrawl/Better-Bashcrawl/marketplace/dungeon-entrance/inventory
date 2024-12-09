@@ -1,0 +1,13 @@
+#!/bin/bash
+
+pwd==$(pwd)
+original_directory="${pwd#*marketplace/}"
+cd
+cd "$FunctionPath"
+source .inventory
+source .potion
+source .mushrooms
+cd
+cd "$GamePath/$original_directory"
+
+ShowInventory

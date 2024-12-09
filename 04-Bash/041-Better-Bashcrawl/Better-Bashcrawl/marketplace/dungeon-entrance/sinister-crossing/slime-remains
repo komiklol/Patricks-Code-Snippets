@@ -1,0 +1,35 @@
+#!/bin/bash
+
+
+
+if [ $SlimeKilledFK -eq 0 ]; then
+    cat << EOF
+
+The darkness surrounds you as the hall lies before you emtpy and silent.
+As you take a moment to collect yourself after the battle, you hear a sound comming towards you.
+A slime identical to the one you just defeated comes from one of the three paths before you.
+You feel you heartbeat quicken as uncertainty looms over you like a shadow.
+
+EOF
+else 
+    cat << EOF
+
+The slimy remains are splattered on the walls and are covering the floor in front of you, pooling at your feet.    
+You look through the remains of the Slime and actually find something usefull.
+You got:
+EOF
+    counter=$SlimeKilledFK
+    for ((i=0; i < $counter; i++)); do
+    
+        if [ $((RANDOM%2)) -eq 0 ]; then
+            INVENTORY+=(Slimy-Glue)
+            echo "- Slimy-Glue"
+        else
+            INVENTORY+=(Slimy-Core)
+            echo "- Slimy-Core"
+        fi
+        SlimeKilledFK=$((SlimeKilledFK - 1))
+    done
+    export INVENTORY
+#    mv slime-remains .slime-remains
+fi

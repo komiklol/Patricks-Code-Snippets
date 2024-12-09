@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+
+function CheckArmor {
+    Armor=0
+    ArmorOriginal=0
+    for i in "${INVENTORY[@]}"; do
+        case $i in 
+            "Gold-Helmet")
+                Armor=$((Armor+2))
+                ArmorOriginal=$((ArmorOriginal+2))
+                ;;
+            *)
+                Armor=0
+                ArmorOriginal=0
+                ;;
+        esac
+    done
+}
