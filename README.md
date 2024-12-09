@@ -10,6 +10,14 @@ In every Project Folder you can find a `README.md` with a short description of t
 
 ---
 
+You can Easy access my Projects by clicking on the following Links:
+
+- PHP - [TrafficLight System (Ampel System) ](/01-PHP/011-Ampel_System%20(TrafficLight%20System))
+- PHP - [Splitter n Finder ](/01-PHP/012-Splitter-n-Finder)
+- Bash - [Better Bashcrawl ](/04-Bash/041-Better-Bashcrawl)
+
+---
+
 ### What I'm Interested In
 - 🖥️ **Web Development:** I love designing the logic behind websites.
 - 💡 **LED Systems:** Especially working with ESP devices and creative lighting solutions.
@@ -112,6 +120,6 @@ Trello<br>
 ---
 
 #### Note:
-All Code in this Repository is written by me in either private Time or in my Apprenticeship. If you have any questions or suggestions, feel free to contact me. I'm always open to feedback and new ideas. 
+All Code in this Repository is written by me in either private Time or in my Apprenticeship. If you have any questions or suggestions, feel free to [contact me](mailto:patrick.beyer.2002@outlook.de). I'm always open to feedback and new ideas. 
 
 ---
