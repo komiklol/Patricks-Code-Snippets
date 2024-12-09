@@ -26,7 +26,7 @@ I’m always eager to learn, discover new fields, and expand my knowledge. Let's
 ---
 
 ### My Favorite Parts of Coding
-<span style="float: left;">📦 **Backend Logic**:</span><span style="float: right;">⬜🟧🟧🟧🟧🟧🟧🟧🟧🟧  </span></br>
+<span align="left">📦 **Backend Logic**:</span><span align="right">⬜🟧🟧🟧🟧🟧🟧🟧🟧🟧  </span></br>
 <span style="float: left;">📈 **Performance Analysis**:</span><span style="float: right;">⬜⬜🟧🟧🟧🟧🟧🟧🟧🟧  </span></br>
 <span style="float: left;">📚 **Front End Layout**:</span><span style="float: right;">⬜⬜⬜🟧🟧🟧🟧🟧🟧🟧  </span></br>
 <span style="float: left;">🛠️ **Debugging**:</span><span style="float: right;">⬜⬜⬜⬜🟧🟧🟧🟧🟧🟧  </span></br>
