@@ -17,6 +17,7 @@ I'm curious about diving into:
 I’m always eager to learn, discover new fields, and expand my knowledge. Let's connect and build something amazing together! 🚀
 
 ### Languages I work with:
+<p align="left">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" width="25" height="25"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" width="25" height="25"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" width="25" height="25"/>
@@ -24,9 +25,10 @@ I’m always eager to learn, discover new fields, and expand my knowledge. Let's
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" width="25" height="25"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" width="25" height="25"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" width="25" height="25"/>
-
+</p>
 
 ### Tools i use:
+<p align="left">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jetbrains/jetbrains-original.svg" alt="Jetbrains" width="25" height="25"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/phpstorm/phpstorm-original.svg" alt="PHP-Storm" width="25" height="25"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/datagrip/datagrip-original.svg" alt="Data-Grip" width="25" height="25"/>
@@ -39,3 +41,4 @@ I’m always eager to learn, discover new fields, and expand my knowledge. Let's
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/putty/putty-original.svg" alt="Putty" width="25" height="25"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg" alt="Win 11" width="25" height="25"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/trello/trello-original.svg" alt="Trello" width="25" height="25"/>
+</p>
