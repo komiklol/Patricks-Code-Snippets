@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?text=Welcome to my Snippets!&animation=fadeIn&type=waving&color=gradient&height=100"/>
+  <img src="https://capsule-render.vercel.app/api?text=Welcome%20to%20my%20Snippets!&animation=fadeIn&type=waving&color=gradient&height=100"/>
 </p>
 
 I'm currently in the second year of my apprenticeship as an **IT Specialist for Application Development**. My most-used programming language is **PHP**, but I enjoy exploring a variety of topics within tech.
