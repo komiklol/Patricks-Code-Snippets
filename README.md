@@ -26,14 +26,14 @@ I’m always eager to learn, discover new fields, and expand my knowledge. Let's
 ---
 
 ### My Favorite Parts of Coding
-<span align="left">📦 **Backend Logic**:</span><span align="right">⬜🟧🟧🟧🟧🟧🟧🟧🟧🟧  </span></br>
-<span style="float: left;">📈 **Performance Analysis**:</span><span style="float: right;">⬜⬜🟧🟧🟧🟧🟧🟧🟧🟧  </span></br>
-<span style="float: left;">📚 **Front End Layout**:</span><span style="float: right;">⬜⬜⬜🟧🟧🟧🟧🟧🟧🟧  </span></br>
-<span style="float: left;">🛠️ **Debugging**:</span><span style="float: right;">⬜⬜⬜⬜🟧🟧🟧🟧🟧🟧  </span></br>
-<span style="float: left;">📊 **Optimization**:</span><span style="float: right;">⬜⬜⬜⬜🟧🟧🟧🟧🟧🟧  </span></br>
-<span style="float: left;">🧩 **Design Patterns**:</span><span style="float: right;">⬜⬜⬜⬜⬜🟧🟧🟧🟧🟧  </span></br>
-<span style="float: left;">📝 **Documentation**:</span><span style="float: right;">⬜⬜⬜⬜⬜⬜⬜🟧🟧🟧  </span></br>
-<span style="float: left;">🧠 **Database System**:</span><span style="float: right;">⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜🟥</span></br>
+📦 **Backend Logic**:     ⬜🟧🟧🟧🟧🟧🟧🟧🟧🟧</br>
+📈 **Performance Analysis**: ⬜⬜🟧🟧🟧🟧🟧🟧🟧🟧</br>
+📚 **Front End Layout**:    ⬜⬜⬜🟧🟧🟧🟧🟧🟧🟧  </br>
+🛠️ **Debugging**:       ⬜⬜⬜⬜🟧🟧🟧🟧🟧🟧  </br>
+📊 **Optimization**:       ⬜⬜⬜⬜🟧🟧🟧🟧🟧🟧  </br>
+🧩 **Design Patterns**:    ⬜⬜⬜⬜⬜🟧🟧🟧🟧🟧  </br>
+📝 **Documentation**:     ⬜⬜⬜⬜⬜⬜⬜🟧🟧🟧  </br>
+🧠 **Database System**:    ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜🟥</br>
 
 ---
 
