@@ -10,7 +10,7 @@ I'm currently in the second year of my apprenticeship as an **IT Specialist for 
 
 ### My Projects
 
-You can easily access ad view my Projects with Descriptions by clicking on the following Links. </br>
+You can easily access and view my Projects with Descriptions by clicking on the following Links. </br>
 In every Project Folder you can find a `ReadMe.md` with a short description of the Project.
 
 | Main Language | Project Name                                                                              |
