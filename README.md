@@ -2,19 +2,22 @@
   <img src="https://capsule-render.vercel.app/api?text=Welcome%20to%20my%20Snippets!&animation=fadeIn&type=waving&color=gradient&height=100"/>
 </p>
 
-Hey I´m **Patrick** 👋
+### Hey I´m **Patrick** 👋
 
 I'm currently in the second year of my apprenticeship as an **IT Specialist for Application Development**. My most-used programming language is **PHP**, but I enjoy exploring a variety of topics within tech.
 
-In every Project Folder you can find a `README.md` with a short description of the Project.
-
 ---
 
-You can Easy access my Projects by clicking on the following Links:
+### My Projects
 
-- PHP - [TrafficLight System (Ampel System) ](/01-PHP/011-Ampel_System%20(TrafficLight%20System))
-- PHP - [Splitter n Finder ](/01-PHP/012-Splitter-n-Finder)
-- Bash - [Better Bashcrawl ](/04-Bash/041-Better-Bashcrawl)
+You can easily access ad view my Projects with Descriptions by clicking on the following Links. </br>
+In every Project Folder you can find a `ReadMe.md` with a short description of the Project.
+
+| Main Language | Project Name                                                                              |
+|---------------|-------------------------------------------------------------------------------------------|
+| PHP           | [TrafficLight System (Ampel System) ](/01-PHP/011-Ampel_System%20(TrafficLight%20System)) |
+| PHP           | [Splitter n Finder ](/01-PHP/012-Splitter-n-Finder)                                       |
+| Bash          | [Better Bashcrawl ](/04-Bash/041-Better-Bashcrawl)                                        |
 
 ---
 
@@ -120,6 +123,6 @@ Trello<br>
 ---
 
 #### Note:
-All Code in this Repository is written by me in either private Time or in my Apprenticeship. If you have any questions or suggestions, feel free to [contact me](mailto:patrick.beyer.2002@outlook.de). I'm always open to feedback and new ideas. 
+All code in this repository is written by me in either free Time or in my apprenticeship. If you have any questions or suggestions, feel free to [contact me](mailto:patrick.beyer.2002@outlook.de). I'm always open to feedback and new ideas. 
 
 ---
