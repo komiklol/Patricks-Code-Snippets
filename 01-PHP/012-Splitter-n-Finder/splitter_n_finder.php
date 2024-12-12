@@ -240,3 +240,13 @@
     // Searching for the Last Entry:
     // Array Time: 0.027944803237915
     // Split Time: 0.0010480880737305
+
+    // 500.000 Pins
+    //Array avg.: 0.0166057823
+    //Split avg.: 0.0000846042
+    //Array Time: 8,302.8911697865
+    //Split Time: 42.3021004200
+    // Finding last Entry
+    //Array Time  : 0.114927053452
+    //Array2 Time : 0.032855987549
+    //Split Time  : 0.013292074203
