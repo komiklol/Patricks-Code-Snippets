@@ -1,6 +1,6 @@
-# Trafficlight System (Ampel-Projekt)
+# 🚦 Trafficlight System (Ampel-Projekt)
 
-🚦 The **Trafficlight System** (Ampel-Projekt) is a project focused on optimizing workflows during so called action-days. Its goal is to provide a simple and effective solution for improving communication and coordination between various participants.
+The **Trafficlight System** (Ampel-Projekt) is a project focused on optimizing workflows during so called action-days. Its goal is to provide a simple and effective solution for improving communication and coordination between various participants.
 
 Since the project is primarily in **German**, all texts and documentation are written in German, except for **code comments** and **variable names**, which follow English programming standards.
 

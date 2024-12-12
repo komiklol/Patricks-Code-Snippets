@@ -1,0 +1,413 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../font/BlockKie.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #818181;
+  font-family: 'CustomFont', sans-serif;
+}
+.Game-Container {
+  width: 65%;
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+}
+.PlayField {
+  width: 100%;
+  height: 100%;
+  background-color: #0967BE;
+  display: inline-flex;
+  overflow: hidden;
+}
+.Enemy {
+  border: #C80707 5px solid;
+  border-radius: 10px 10px 0 0;
+}
+.Friendly {
+  border: #0EE324 5px solid;
+  border-radius: 0 0 10px 10px;
+}
+.Enemy:hover {
+  cursor: url(../img/Assets/Cursor_Aim.png) 8 8, auto;
+}
+
+
+
+
+
+#custom-cursor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 9999;
+}
+#custom-cursor > img {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-position: bottom;
+  z-index: 9999;
+}
+
+
+
+
+
+.ShipButtonCSS {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: transparent 2px solid;
+  border-radius: 5px;
+}
+.ShipButtonCSS:hover {
+  border-color: black;
+  cursor: pointer;
+}
+.ShipPlacementButton {
+  width: 80%;
+  height: auto;
+}
+.ShipRotationButtonContainer {
+  margin-right: 5px;
+  width: 8%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ShipRotationButton {
+  width: 80%;
+  border: black 1px solid;
+  transition: transform 0.2s ease;
+}
+.ShipRotationButton.ShipRotationButton-L {
+  transform: rotate(0deg);
+}
+.ShipRotationButton.ShipRotationButton-U {
+  transform: rotate(90deg);
+}
+.ShipRotationButton.ShipRotationButton-R {
+  transform: rotate(180deg);
+}
+.ShipRotationButton.ShipRotationButton-D {
+  transform: rotate(270deg);
+}
+
+.ShipCounter {
+  font-size: x-large;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 5px;
+}
+
+.Countable {
+  width: 75%;
+  color: #3a3535;
+  font-family: Impact, serif;
+  font-size: xx-large;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Countable-Bundle {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Countable-Bundle p {
+  padding: 2%;
+}
+.Action-Button {
+  width: 100%;
+  margin: 0 2% 0 2%;
+}
+.Action-Image {
+  height: auto;
+  width: 100%;
+}
+.Action-Image-Container {
+  width: 24%;
+  justify-self: left;
+}
+.Action-Button-Active {
+  border: 3px solid lime;
+}
+.Countable-Mission {
+  width: 30%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+}
+.Mission-Selector-EL {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  border: 1px solid black;
+  transition: transform 0.2s ease;
+}
+.Mission-Selector-EL img {
+  height: 100%;
+}
+.Mission-Select {
+  border: 2px solid lime !important;
+}
+
+
+
+
+
+
+.HealthBar {
+  height: 100%;
+  width: 100%;
+  column-gap: 2px;
+}
+.HealthBarTile {
+  grid-row: 1;
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #043009;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+.HealthBarTileInner {
+  grid-row: 1;
+  background-color: #0a9c1a;
+  border-radius: 5px;
+  width: 0;
+  z-index: 2;
+  justify-self: left;
+  height: 100%;
+}
+.HealthBarTotal {
+  grid-row: 2;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #043009;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  margin: 10px 2px 2px;
+}
+.HealthBarTotalSinkingLvL {
+  z-index: 2;
+  grid-row: 2;
+  background-color: rgba(255, 0, 0, 0.6);
+  border: 1px solid black;
+  border-radius: 5px 0 0 5px;
+  height: 100%;
+  margin: 10px 2px 2px;
+
+}
+.HealthBarTotalInner {
+  grid-row: 2;
+  z-index: 3;
+  justify-self: left;
+  border-radius: 5px;
+  background-color: #0a9c1a;
+  height: 100%;
+  width: 100%;
+}
+.RepairPerTile p {
+  font-family: Impact, serif;
+  font-size: large;
+}
+
+
+.Playing-HUD {
+  width: 30%;
+  margin: 1%;
+  background-color: #ccc;
+  border: #E3C10E 5px solid;
+  border-radius: 10px;
+}
+
+.playerHUDButton {
+  width: 95%;
+  height: 14%;
+  background-color: #9eaec6;
+  border: black 2px solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+}
+
+.SnowLayer {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/Assets/SnowLayer.png);
+  background-repeat: repeat;
+  background-size: cover;
+  opacity: 0.2;
+}
+
+.Donation {
+  width: 95%;
+  height: 14%;
+  background-color: #9eaec6;
+  border: black 2px solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#donate-button {
+  width: 100%;
+}
+
+.BoxElement {
+  background-color: #ccc;
+  border: black 2px solid;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.CreditsElement img {
+  height: 50%;
+}
+
+.BoxElement p {
+  font-size: medium;
+  color: black;
+  text-align: center;
+  padding: 5px;
+}
+
+.info {
+  background-color: #ccc;
+  border: black 2px solid;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info p {
+  font-size: x-large;
+  color: black;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.TopSecretContainer {
+  width: 60%;
+  height: 80%;
+  margin-left: 2%;
+  align-content: center;
+}
+
+.TopSecret {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 25%;
+  width: 90%;
+}
+
+.TSGameID {
+  width: 60%;
+  height: 11%;
+  background-color: #999999;
+  font-size: medium;
+  border-bottom: black 2px solid;
+  border-left: black 2px solid;
+  border-right: black 2px solid;
+  margin-left: 7%;
+  margin-right: 12%;
+  margin-bottom: 4%;
+}
+
+.TSGamePW {
+  width: 60%;
+  height: 11%;
+  background-color: #999999;
+  font-size: medium;
+  border-top: black 2px solid;
+  border-left: black 2px solid;
+  border-right: black 2px solid;
+  margin-left: 7%;
+  margin-right: 12%;
+  margin-top: 4%;
+}
+
+.TopSecret input {
+  height: 65%;
+  width: 70%;
+  padding: 5px;
+  cursor: pointer;
+  font-size: large;
+}
+
+#TopSecretImgID {
+  height: 100%;
+  margin: 0;
+}
+
+#TopSecretImgPW {
+  height: 100%;
+  margin: 0;
+}
+
+.TSGameIDText {
+  margin: 0;
+  padding: 0;
+}
+
+.TSGamePWText {
+  margin: 0;
+  padding: 0;
+}
+
+.PingContainer {
+  height: 40%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.PingContainer img {
+  height: 50%;
+  cursor: pointer;
+  padding-left: 4px;
+}
+
+#CreateCustomGame {
+  height: 80%;
+}
+
+.AccessDenied {
+  border: #C80707 5px solid;
+  color: #C80707;
+}
+
+
+
+
