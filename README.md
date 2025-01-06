@@ -64,13 +64,7 @@ I’m always eager to learn, discover new fields, and expand my knowledge. Let's
 
 <details>
 <summary>Not familiar with the Icons?</summary>
-PHP<br>
-HTML 5<br>
-CSS<br>
-JavaScript<br>
-C<br>
-MYSQL<br>
-Java<br>
+PHP, HTML 5, CSS, JavaScript, C, MYSQL, Java
 </details>
 
 ---
@@ -93,18 +87,7 @@ Java<br>
 
 <details>
 <summary>Not familiar with the Icons?</summary>
-Jetbrains<br>
-PHP Storm<br>
-Data Grip<br>
-C Lion<br>
-Web Storm<br>
-IntelliJ<br>
-Visual Studio Code<br>
-Gimp<br>
-Git<br>
-Putty<br>
-Windows 11<br>
-Trello<br>
+Jetbrains, PHP Storm, Data Grip, C Lion, Web Storm, IntelliJ, Visual Studio Code, Gimp, Git, Putty, Windows 11, Trello
 </details>
 
 ---
