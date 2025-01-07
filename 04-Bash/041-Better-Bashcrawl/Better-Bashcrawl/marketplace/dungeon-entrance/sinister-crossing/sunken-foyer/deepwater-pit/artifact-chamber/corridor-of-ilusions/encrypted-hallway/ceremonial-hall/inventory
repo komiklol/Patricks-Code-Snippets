@@ -1,0 +1,9 @@
+#!/bin/bash
+
+original_directory=$(pwd)
+cd
+cd $FunctionPath
+source .inventory
+cd "$original_directory"
+
+ShowInventory
