@@ -24,8 +24,8 @@ In every Project Folder you can find a `ReadMe.md` with a short description of t
 ---
 
 ### What I'm Interested In
-- 🖥️ **Web Development:** I love designing the logic behind websites.
-- 💡 **IT Technologies:** Especially working and working with new and interesting Technologies and Products.
+- 🖥️ **Web Development:** I Like designing the logic behind websites.
+- 💡 **IT Technologies:** I Love working and Testing new and interesting Technologies and Products.
 - 🎮 **Games:** My passion lies in gaming and game development.
 
 ---
