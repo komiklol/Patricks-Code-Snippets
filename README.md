@@ -55,18 +55,18 @@ I’m always eager to learn, discover new fields, and expand my knowledge. Let's
 ### Languages I work(ed) with:
 <p align="left">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" width="25" height="25" title="PHP"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" width="25" height="25" title="HTML5"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" width="25" height="25" title="CSS3"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" width="25" height="25" title="JavaScript"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" width="25" height="25" title="C"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="MYSQL" width="25" height="25" title="MySQL"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" width="25" height="25" title="HTML5"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" width="25" height="25" title="Java"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" width="25" height="25" title="CSS3"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" width="25" height="25" title="C"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="25" height="25" title="Python"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" width="25" height="25" title="JavaScript"/>
 </p>
 
 <details>
 <summary>Not familiar with the Icons?</summary>
-PHP, HTML 5, CSS, JavaScript, C, MYSQL, Java
+PHP, MYSQL, HTML5, Java, CSS, C, Python, JavaScript, 
 </details>
 
 ---
@@ -80,16 +80,16 @@ PHP, HTML 5, CSS, JavaScript, C, MYSQL, Java
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webstorm/webstorm-original.svg" alt="Web-Storm" width="25" height="25" title="Web-Storm"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" alt="IntelliJ" width="25" height="25" title="IntelliJ"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS-Code" width="25" height="25" title="VS-Code"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gimp/gimp-original.svg" alt="Gimp" width="25" height="25" title="Gimp"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" width="25" height="25" title="Git"/>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/putty/putty-original.svg" alt="Putty" width="25" height="25" title="Putty"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg" alt="Win 11" width="25" height="25" title="Win 11"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/trello/trello-original.svg" alt="Trello" width="25" height="25" title="Trello"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/putty/putty-original.svg" alt="Putty" width="25" height="25" title="Putty"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" width="25" height="25" title="Git"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gimp/gimp-original.svg" alt="Gimp" width="25" height="25" title="Gimp"/>
 </p>
 
 <details>
 <summary>Not familiar with the Icons?</summary>
-Jetbrains, PHP Storm, Data Grip, C Lion, Web Storm, IntelliJ, Visual Studio Code, Gimp, Git, Putty, Windows 11, Trello
+Jetbrains, PHP Storm, Data Grip, C Lion, Web Storm, IntelliJ, Visual Studio Code, Windows 11, Trello, Putty, Git, Gimp, 
 </details>
 
 ---
