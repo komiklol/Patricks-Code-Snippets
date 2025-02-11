@@ -25,7 +25,7 @@ In every Project Folder you can find a `ReadMe.md` with a short description of t
 
 ### What I'm Interested In
 - 🖥️ **Web Development:** I love designing the logic behind websites.
-- 💡 **LED Systems:** Especially working with ESP devices and creative lighting solutions.
+- 💡 **IT Technologies:** Especially working and working with new and interesting Technologies and Products.
 - 🎮 **Games:** My passion lies in gaming and game development.
 
 ---
@@ -52,7 +52,7 @@ I’m always eager to learn, discover new fields, and expand my knowledge. Let's
 
 ---
 
-### Languages I work with:
+### Languages I work(ed) with:
 <p align="left">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" width="25" height="25" title="PHP"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" width="25" height="25" title="HTML5"/>
@@ -61,6 +61,7 @@ I’m always eager to learn, discover new fields, and expand my knowledge. Let's
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" width="25" height="25" title="C"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="MYSQL" width="25" height="25" title="MySQL"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" width="25" height="25" title="Java"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="25" height="25" title="Python"/>
 </p>
 
 <details>
@@ -104,7 +105,7 @@ Jetbrains, PHP Storm, Data Grip, C Lion, Web Storm, IntelliJ, Visual Studio Code
 - **Age:** 22 - 16.09.2002 🎂
 - **Location:** Germany, Frankfurt am Main 🇩🇪
 - **Hobbies:** Gaming, Coding 🎮
-- **Favorite Games:** Satisfactory, Factorio, Robocraft, Minecraft 🎮
+- **Favorite Games:** Satisfactory, Factorio, Minecraft 🎮
 - **Favorite Drink:** Monster Energy 🥤
 
 ---
