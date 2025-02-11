@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?text=Welcome%20to%20my%20Snippets!&animation=fadeIn&type=waving&color=gradient&height=100"/>
+  <img alt="Welcome to my Snippets" src="https://capsule-render.vercel.app/api?text=Welcome%20to%20my%20Snippets!&animation=fadeIn&type=waving&color=gradient&height=100"/>
 </p>
 
 ### Hey I´m **Patrick** 👋
@@ -13,12 +13,13 @@ I'm currently in the second year of my apprenticeship as an **IT Specialist for 
 You can easily access and view my Projects with Descriptions by clicking on the following Links. </br>
 In every Project Folder you can find a `ReadMe.md` with a short description of the Project.
 
-| Main Language | Project Name                                                                              |
-|---------------|-------------------------------------------------------------------------------------------|
-| PHP           | [TrafficLight System (Ampel System) ](/01-PHP/011-Ampel_System%20(TrafficLight%20System)) |
-| PHP           | [Splitter n Finder ](/01-PHP/012-Splitter-n-Finder)                                       |
-| PHP           | [PhattleShips ](/01-PHP/010-PhattleShips)                                                 |
-| Bash          | [Better Bashcrawl ](/04-Bash/041-Better-Bashcrawl)                                        |
+| Main Language | Project Name                                                                                   |
+|---------------|------------------------------------------------------------------------------------------------|
+| PHP           | [TrafficLight System (Ampel System) ](/01-PHP/011-Ampel_System%20(TrafficLight%20System))      |
+| PHP           | [Splitter n Finder ](/01-PHP/012-Splitter-n-Finder)                                            |
+| PHP           | [PhattleShips ](/01-PHP/010-PhattleShips)                                                      |
+| Bash          | [Better Bashcrawl ](/04-Bash/041-Better-Bashcrawl)                                             |
+| Python        | [QR-Codes](https://github.com/komiklol/qrCode-python/) (This Redirects to another Repository!) |   
 
 ---
 
