@@ -20,7 +20,7 @@ In every Project Folder you can find a `ReadMe.md` with a short description of t
 | PHP           | [PhattleShips ](/01-PHP/010-PhattleShips)                                                      |
 | Bash          | [Better Bashcrawl ](/04-Bash/041-Better-Bashcrawl)                                             |
 | Python        | [QR-Codes](https://github.com/komiklol/qrCode-python/) (This Redirects to another Repository!) |
-| Python        | [QR-Codes](https://github.com/komiklol/2FA-QR/) (This Redirects to another Repository!)        |   
+| Python        | [2FA-QR](https://github.com/komiklol/2FA-QR/) (This Redirects to another Repository!)          |   
 
 ---
 
