@@ -13,14 +13,16 @@ I'm currently in the second year of my apprenticeship as an **IT Specialist for 
 You can easily access and view my Projects with Descriptions by clicking on the following Links. </br>
 In every Project Folder you can find a `ReadMe.md` with a short description of the Project.
 
-| Main Language | Project Name                                                                                   |
-|---------------|------------------------------------------------------------------------------------------------|
-| PHP           | [TrafficLight System (Ampel System) ](/01-PHP/011-Ampel_System%20(TrafficLight%20System))      |
-| PHP           | [Splitter n Finder ](/01-PHP/012-Splitter-n-Finder)                                            |
-| PHP           | [PhattleShips ](/01-PHP/010-PhattleShips)                                                      |
-| Bash          | [Better Bashcrawl ](/04-Bash/041-Better-Bashcrawl)                                             |
-| Python        | [QR-Codes](https://github.com/komiklol/qrCode-python/) (This Redirects to another Repository!) |
-| Python        | [2FA-QR](https://github.com/komiklol/2FA-QR/) (This Redirects to another Repository!)          |   
+| Main Language | Project Name                                                                              |
+|---------------|-------------------------------------------------------------------------------------------|
+| PHP           | [TrafficLight System (Ampel System) ](/01-PHP/011-Ampel_System%20(TrafficLight%20System)) |
+| PHP           | [Splitter n Finder ](/01-PHP/012-Splitter-n-Finder)                                       |
+| PHP           | [PhattleShips ](/01-PHP/010-PhattleShips)                                                 |
+| Bash          | [Better Bashcrawl ](/04-Bash/041-Better-Bashcrawl)                                        |
+| Python        | [QR-Codes](https://github.com/komiklol/qrCode-python/) *(1)*                              |
+| Python        | [2FA-QR](https://github.com/komiklol/2FA-QR/) *(1)*                                       |   
+
+###### *(1) This Redirects to another Repository!*
 
 ---
 
