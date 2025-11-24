@@ -4,20 +4,21 @@
 
 ### Hey I´m **Patrick** 👋
 
-I'm currently in the second year of my apprenticeship as an **IT Specialist for Application Development**. My most-used programming language is **PHP**, but I enjoy exploring a variety of topics within tech.
+I'm currently in the Third and with that my last year of my apprenticeship as an **IT Specialist for Application Development**. My most-used programming language is **PHP** and **B4X**, but I enjoy exploring a variety of topics within tech.
 
 ---
 
 ### My Projects
 
-You can easily access and view my Projects with Descriptions by clicking on the following Links. </br>
-In every Project Folder you can find a `ReadMe.md` with a short description of the Project.
+You can access and view a selected variety of my Projects with Descriptions by clicking on the following Links. </br>
+In every Project Folder you can find a `ReadMe.md` with a description of the Project.
 
 | Main Language | Project Name                                                                              |
 |---------------|-------------------------------------------------------------------------------------------|
 | PHP           | [TrafficLight System (Ampel System) ](/01-PHP/011-Ampel_System%20(TrafficLight%20System)) |
 | PHP           | [Splitter n Finder ](/01-PHP/012-Splitter-n-Finder)                                       |
 | PHP           | [PhattleShips ](/01-PHP/010-PhattleShips)                                                 |
+| PHP           | [Local Home Website ](/01-PHP/013-Home_Website) (WIP)                                     |
 | Bash          | [Better Bashcrawl ](/04-Bash/041-Better-Bashcrawl)                                        |
 | Python        | [QR-Codes](https://github.com/komiklol/qrCode-python/) *(1)*                              |
 | Python        | [2FA-QR](https://github.com/komiklol/2FA-QR/) *(1)*                                       |   
@@ -28,15 +29,15 @@ In every Project Folder you can find a `ReadMe.md` with a short description of t
 
 ### What I'm Interested In
 - 🖥️ **Web Development:** I Like designing the logic behind websites.
-- 💡 **IT Technologies:** I Love working and Testing new and interesting Technologies and Products.
-- 🎮 **Games:** My passion lies in gaming and game development.
+- 💡 **IT Technologies:** Working and Testing new and interesting Technologies and Products.
+- 🎮 **Games:** My passion lies in gaming.
 
 ---
 
 ### Areas I'd Like to Explore
 I'm curious about diving into:
 - 🚚 **Logistics Systems**
-- 🛡️ **Security Technologies**
+- 🔌️ **Hardware Based Programming**
 - 🪖 **Military Technologies**
 
 I’m always eager to learn, discover new fields, and expand my knowledge. Let's connect and build something amazing together! 🚀
@@ -65,11 +66,12 @@ I’m always eager to learn, discover new fields, and expand my knowledge. Let's
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" width="25" height="25" title="C"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="25" height="25" title="Python"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" width="25" height="25" title="JavaScript"/>
+<img src="ReadMe-Content/B4X.png" alt="JavaScript" width="25" height="25" title="B4X"/>
 </p>
 
 <details>
 <summary>Not familiar with the Icons?</summary>
-PHP, MYSQL, HTML5, Java, CSS, C, Python, JavaScript, 
+PHP, MYSQL, HTML5, Java, CSS, C, Python, JavaScript, B4X.
 </details>
 
 ---
@@ -88,11 +90,12 @@ PHP, MYSQL, HTML5, Java, CSS, C, Python, JavaScript,
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/putty/putty-original.svg" alt="Putty" width="25" height="25" title="Putty"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" width="25" height="25" title="Git"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gimp/gimp-original.svg" alt="Gimp" width="25" height="25" title="Gimp"/>
+<img src="ReadMe-Content/B4X.png" alt="JavaScript" width="25" height="25" title="Anywhere Software B4X"/>
 </p>
 
 <details>
 <summary>Not familiar with the Icons?</summary>
-Jetbrains, PHP Storm, Data Grip, C Lion, Web Storm, IntelliJ, Visual Studio Code, Windows 11, Trello, Putty, Git, Gimp, 
+Jetbrains, PHP Storm, Data Grip, C Lion, Web Storm, IntelliJ, Visual Studio Code, Windows 11, Trello, Putty, Git, Gimp, Anywhere Software B4X.
 </details>
 
 ---
@@ -105,10 +108,10 @@ Jetbrains, PHP Storm, Data Grip, C Lion, Web Storm, IntelliJ, Visual Studio Code
 ### 🧑 About me:
 - **Name:** Patrick Beyer
 - **Pronouns:** He/Him
-- **Age:** 22 - 16.09.2002 🎂
+- **Age:** 23 - 16.09.2002 🎂
 - **Location:** Germany, Frankfurt am Main 🇩🇪
-- **Hobbies:** Gaming, Coding 🎮
-- **Favorite Games:** Satisfactory, Factorio, Minecraft 🎮
+- **Hobbies:** Gaming, Coding, Karting, Wherever my Midnight Fixation takes me 🎮
+- **Favorite Games:** Satisfactory, Factorio, City-Skylines, Minecraft 🎮
 - **Favorite Drink:** Monster Energy 🥤
 
 ---
